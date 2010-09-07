@@ -1,10 +1,10 @@
 <div id="masthead">
   <div id="home_nav">
-      <a class="mast_link" href="/accounts/profile/"> Media Browser </a>
+      <a href="/accounts/profile/"> Media Browser </a>
 
-      <a class="mast_link" href="http://6004.csail.mit.edu/"> 6.004 Homepage </a>
+      <a href="http://6004.csail.mit.edu/"> 6.004 Homepage </a>
 
-      <a class="mast_link" href="http://q.csail.mit.edu">Help/Checkoff Queue</a>
+      <a href="http://q.csail.mit.edu">Help/Checkoff Queue</a>
 
   </div>
 
@@ -13,11 +13,11 @@
     {% if user.is_authenticated %}
 
     Logged in as {{ user.get_full_name }}. 
-      <a class="mast_link" href="/accounts/logout/">Sign Out</a>.
+      <a href="/accounts/logout/">Sign Out</a>.
     {% else %}
 
     Welcome. Please 
-    <a class="mast_link" href="/accounts/login">Sign In</a> 
+    <a href="/accounts/login">Sign In</a> 
     to access all features of this site.
   
     {% endif %}

@@ -1,12 +1,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html lang="en">
 <head>
-<link rel="stylesheet" type="text/css" href="/site_media/css/usersite.css" />
-
-
-	  {% block header %} {% endblock %}
-  
-    <title>{% block title %}Course Records and Study Materials{% endblock %}</title>
+  <link rel="stylesheet" type="text/css" href="/site_media/css/usersite.css" />
+	{% block header %} {% endblock %}
+  <title>{% block title %}Course Records and Study Materials{% endblock %}</title>
 
 <!--
 <div="nav" class="nav_tabs">
@@ -28,15 +25,11 @@
 
 
 <body {% block body_attributes %}{% endblock %}>
-  <div id="base">
   {% include "masthead.html" %}
   
   <div id="content_container">
-    {% block content %} 
-    {% endblock %}
+    {% block content %}{% endblock %}
   </div>
-  </div>
-  
 </body>
 
 

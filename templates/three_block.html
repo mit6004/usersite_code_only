@@ -1,26 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<div id="top_block">
-  <div id="main_column">
-    {% block main_column %}
-    {% endblock main_column %}
-  </div>
-  
-  <div id="browse_sidebar">
-    <div id="page_top">
-      {% block page_top %}
-      {% endblock page_top %}
+  <div id="top_block">
+    <div id="main_column">
+      {% block main_column %}
+      {% endblock main_column %}
     </div>
-    {% block browse_sidebar %}
-    {% endblock browse_sidebar %}
+    
+    <div id="browse_sidebar">
+      <div id="main_page_header">{% block page_top %}{% endblock page_top %}</div>
+      {% block browse_sidebar %}
+      {% endblock browse_sidebar %}
+    </div>
   </div>
   <div class="clear"></div>
-</div>
-
-<div id="bottom_block">
-  {% block bottom_block %}
-  {% endblock bottom_block %}
-</div>
+  
+  <div id="bottom_block">
+    {% block bottom_block %}
+    {% endblock bottom_block %}
+  </div>
 {% endblock content %}

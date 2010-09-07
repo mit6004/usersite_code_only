@@ -1,3 +1,4 @@
+/* set default styles to ensure consistent font and padding behaviour */
 body 
 {
     margin:0;
@@ -12,72 +13,13 @@ div, td, p, th, ul, ol
     line-height:125%;
 }
 
-
-
 ul, ol
 {
     margin-top:0.5em;
 }
 
-#base
-{
-    height:100%;
-    /*background-color:#3c3c3c;*/
-}
 
-#top_block
-{
-    position:relative;
-    padding:0.5em;
-    width:90%;
-}
-
-#main_column
-{
-    background-color:#F0F0F0;
-    padding:0.5em;
-    float:left;
-    min-width:800px;
-}
-
-#sidebar
-{
-    font-size:75%;
-    width:300px;
-    float:left;
-    margin-left:3em;
-    position:auto;
-    background-color:#AABBCC;
-    padding:0.5em;
-    display:block;
-
-}
-
-#browse_sidebar
-{
-    position:absolute;
-    right:1.5%;
-    width:30%;
-    display:inline;
-    padding:0.5em;
-    background-color:#CCCCCC;
-}
-
-#sidebar_content
-{
-    display:block;
-    height:500px;
-}
-
-
-#bottom_block
-{
-    margin-top:0.5em;
-    display:block;
-    float:left;
-    width:90%;
-}
-
+/* utility styles */
 .clear 
 {
     clear:both;
@@ -92,6 +34,92 @@ ul, ol
     margin-bottom:0px;
 }
 
+#main_page_header
+{
+    font-size:125%;
+    font-weight:bold;
+    text-decoration:underline;
+    margin-bottom:10px;
+}
+
+
+/* elements in two_column */
+#two_column_wrapper
+{
+    /*border:2px solid green;*/
+    position:relative;
+    text-align:left;
+    padding-right:325px;
+}
+
+#main_column
+{
+    /*border:1px solid blue;*/
+    background-color:#F0F0F0;
+    padding:0.5em;
+    float:left;
+    position:relative;
+    margin-right:25px;
+    width:100%;
+    min-width:800px;
+    z-index:12;
+}
+
+#sidebar
+{
+    float:left;
+    margin-right:-325px;
+    position:relative;
+    width:275px;
+    z-index:11;
+    font-size:75%;
+    background-color:#AABBCC;
+    padding:0.5em;
+}
+
+
+/* elements in three_block */
+#top_block
+{
+    /*border:2px solid green;*/
+    position:relative;
+    text-align:left;
+    padding-right:325px;
+}
+
+
+#bottom_block
+{
+  margin-top:0.5em;
+}
+
+#browse_sidebar
+{
+    float:left;
+    margin-right:-325px;
+    position:relative;
+    width:275px;
+    z-index:11;
+    padding:0.5em;
+    background-color:#CCCCCC;
+    height:504px;
+}
+
+
+/* elements in base */
+#content_container
+{
+    /* border:1px solid yellow; */
+    min-width:1125px;
+    width:90%;
+    margin:auto;
+    padding:0;
+    position:relative;
+    top:1em;
+}
+
+
+/* elements in masthead */
 #masthead
 {
     margin:0;
@@ -99,15 +127,8 @@ ul, ol
     font-size:80%;
     padding:.5em 2em;
     background-color:#DDDDDD;
-    border-bottom:1px solid black;
-}
-
-
-#content_container
-{
-    width:90%;
-    margin:auto;
-    margin-top:1em;
+    border-bottom:2px solid black;
+    border-right:2px solid black;
 }
 
 #home_nav
@@ -126,25 +147,17 @@ ul, ol
     margin-right:5em;
 }
 
-#page_top
-{
-    font-size: 125%;
-    font-weight:bold;
-    text-decoration:underline;
- 
-    margin-bottom:10px;
-    
-
-}
-
-.mbrowser
-{
-    background-color:#EEEEEE;
-}
-
-.mast_link
+#masthead a
 {
     font-size:120%;
     font-weight:bold;
     padding:0.5em;
+}
+
+
+
+/* elements in mbrowser */
+.mbrowser
+{
+  background-color:#EEEEEE;
 }

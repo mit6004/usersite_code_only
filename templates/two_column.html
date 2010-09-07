@@ -2,23 +2,19 @@
 
 {% block content %}
 
-<div id="main_column">
-
-<div id="page_top">
-{% block page_top %}
-{% endblock page_top %}
+<div id="two_column_wrapper">
+  <div id="main_column">
+    <div id="main_page_header">{% block page_top %}{% endblock page_top %}</div>
+    {% block main_column %}
+    {% endblock main_column %}
+  </div>
+  
+  <div id="sidebar">
+    {% block sidebar %}
+    {% endblock sidebar %}
+  </div>
 </div>
 
-{% block main_column %}
-
-{% endblock main_column %}
-</div>
-
-
-<div id="sidebar">
-{% block sidebar %}
-
-{% endblock sidebar %}
-</div>
+<div class="clear"></div>
 
 {% endblock content %}
