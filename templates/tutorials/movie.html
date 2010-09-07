@@ -1,0 +1,34 @@
+
+<div id="movie_div"></div>
+
+<script type="text/javascript" src="/site_media/AC_QuickTime.js"></script>
+<script type="text/javascript" src="/site_media/common_quicktime_methods.js"></script>
+
+<script type="text/javascript">
+
+  // set values from python
+  var params = {  'movie_source'         : '{{movie_source}}',
+                  'height'               : parseInt( '{{height}}'),
+                  'width'                : parseInt( '{{width}}'),
+                  'should_resize'        : parseBool('{{resize}}'),
+                  'should_set_run_times' : parseBool('{{set_run_times}}'),
+                  'start_time'           : parseInt( '{{start_time}}'),
+                  'end_time'             : parseInt( '{{end_time}}')       }
+  
+  display_video(params);
+  
+  // extra functions and listeners can be defined here
+  /*
+  
+  //functions to update video fields for video preview template
+  
+	function meta_loader()
+	{
+	  update_dimension_fields('video_height', 'video_width');
+	  initialize_times();
+	}
+	
+  RegisterListener('qt_loadedmetadata', 'movie1', 'movie1_emb', meta_loader);
+  */
+	// end of extra functions
+</script>

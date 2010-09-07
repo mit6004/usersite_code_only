@@ -40,26 +40,7 @@ function setup_movie()
 	set_default_end_time();
 }
 
-function set_start_time()
-{
-	document.getElementById('start_time_units').value = playhead_position();
-	document.getElementById('start_time_display').value = format_time( playhead_position() );
-}
 
-function set_end_time(end_time)
-{
-	if(typeof(end_time) == "undefined")
-	{ 
-		end_time = playhead_position();
-	}
-	document.getElementById('end_time_units').value = end_time;
-	document.getElementById('end_time_display').value = format_time( end_time );
-}
-
-function set_default_end_time()
-{
-	set_end_time( document.movie1.GetDuration() );
-}
 
 
 </script>
