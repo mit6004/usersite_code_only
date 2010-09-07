@@ -1,12 +1,12 @@
-{% extends "base.html" %}
+{% extends "two_column.html" %}
 
 {% block title %}Course Media{% endblock %}
 
 {% block header %}
 
-<script type="text/javascript">
+{% include "movie_header.html" %}
 
-
+{% endblock header %}
   
   // called from body.onload to set up listeners that will wait for quicktime
   // movie to send events
@@ -16,59 +16,35 @@
   	// when the movie loads, it will set the end time to the duration of the movie
 
   }
-  
+{% block body_attributes %}onload="RegisterListeners();"{% endblock body_attributes %}
 
-</script>
-
-{% endblock %}
+{% block main_column %}
 
 
-{% block content %}
+<table border="0">
+  <tr>
+    <td>
+      <div id="movie_div" style="float:left;align:left"></div>
+      
+      <script type="text/javascript">
+	document.getElementById('movie_div').innerHTML = qtEmbed;
+      </script>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      {% include "comment_view.html" %}	
+    </td>
+  </tr>
+</table>
+
+{% endblock main_column%}
+{% block sidebar %}
+
+{% include "similar_video_bar.html" %}
+{% include "favorite_button.html" %}
 
 
-  <div id="movie_div" style="float:left;align:left"></div>
+{% endblock sidebar %}
 
-
-  <div>
-    <table border="0" style="align:center;display:block">
-      <tr>
-	<th>
-	</th>
-	<th>
-	</th>
-	<th>
-	</th>
-	<th>
-	</th>
-      </tr>
-      <tr>
-	<td colspan="4">
-	  <h2>View more Videos with the same:</h2>
-	</td>
-      </tr>
-      <tr>
-	<th>
-	  <a href="/web/show_for_topic/{{ta.topic}}/">Topic</a>
-	</th>
-	<th>
-	  <a href="/web/show_for_author/{{ta.video.author.username}}/">Author</a>
-	</th>
-	<th>
-	  <a href="/web/show_for_semester/{{ta.video.semester}}/">Semester</a>
-	</th>
-	<th>
-	  <a href="/web/show_for_type/{{ta.video.type}}/">Type</a>
-	</th>
-      </tr>
-    </table>
-  </div>
-
-  <div id="linked_problems">
-    <ul>
-    {% for linked_problem in linked_problems %}
-    <li>
-      <a href="/tutprobs/{{topic_number}}/{{linked_problem.id}}/">{{linked_problem.name}}</a>
-    </li>
-    {% endfor %}
-    </ul>
-    {% endblock %}
