@@ -4,8 +4,9 @@
 
 <!-- movie stuff -->
 {% block header %}
-{% include "movie_header.html" %}
+  {% include "movie_header.html" %}
 {% endblock header %}
+
 {% block body_attributes %}onload="RegisterListeners();"{% endblock %}
 <!-- end movie stuff -->
 
@@ -15,17 +16,10 @@
 
 
 {% block main_column %}
-
   {% include "movie_div.html" %}
-
 {% endblock main_column %}
 
+
 {% block bottom_block %}
-
   {% include "mbrowser.html" %}
-
 {% endblock bottom_block %}
-
-
-
-    

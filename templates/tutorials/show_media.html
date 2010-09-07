@@ -3,48 +3,33 @@
 {% block title %}Course Media{% endblock %}
 
 {% block header %}
-
-{% include "movie_header.html" %}
-
+  {% include "movie_header.html" %}
 {% endblock header %}
-  
-  // called from body.onload to set up listeners that will wait for quicktime
-  // movie to send events
-  
-  function RegisterListeners()
-  {
-  	// when the movie loads, it will set the end time to the duration of the movie
 
-  }
 {% block body_attributes %}onload="RegisterListeners();"{% endblock body_attributes %}
 
 {% block main_column %}
-
-
-<table border="0">
-  <tr>
-    <td>
-      <div id="movie_div" style="float:left;align:left"></div>
-      
-      <script type="text/javascript">
-	document.getElementById('movie_div').innerHTML = qtEmbed;
-      </script>
-    </td>
-  </tr>
-
-  <tr>
-    <td>
-      {% include "comment_view.html" %}	
-    </td>
-  </tr>
-</table>
-
+  <table border="0">
+    <tr>
+      <td>
+        <div id="movie_div" style="float:left;align:left"></div>
+        
+        <script type="text/javascript">
+  	      document.getElementById('movie_div').innerHTML = qtEmbed;
+        </script>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        {% include "comment_view.html" %}	
+      </td>
+    </tr>
+  </table>
 {% endblock main_column%}
+
 {% block sidebar %}
-
-{% include "similar_video_bar.html" %}
-{% include "favorite_button.html" %}
-
-
+  {% include "similar_video_bar.html" %}
+  {% include "favorite_button.html" %}
 {% endblock sidebar %}
 
